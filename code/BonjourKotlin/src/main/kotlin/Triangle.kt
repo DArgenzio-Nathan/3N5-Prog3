@@ -1,14 +1,38 @@
 package org.dargenzio
 
-fun trianle(hauteur : Int) : String {
 
 
-    for (i : Int in 1 ..hauteur) {
+//fun triangle(hauteur : Int) : String{
+//
+//
+//    return ("*".repeat(hauteur))
+//
+//}
+//
+//fun main(){
+//var result = triangle(hauteur = 4)
+//    repeat(4) {
+//        println(result)
+//    }
+//
+//}
 
-        print("*")
-
-
+//changer les print pour les mettre dans var
+fun triangle(hauteur : Int) : String{
+    var maString: String = ""
+    for (i in 1..hauteur){
+        for (j in 1..i){
+            print("*")
+        }
+        println()
     }
-
-return ""
+    return maString
 }
+
+fun main(){
+    triangle(hauteur = 4)
+
+}
+
+
+
