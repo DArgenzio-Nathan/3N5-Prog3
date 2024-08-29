@@ -1,0 +1,1 @@
+val ne peut pas changer de valeur mais var le peut
