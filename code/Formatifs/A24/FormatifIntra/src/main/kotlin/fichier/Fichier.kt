@@ -13,8 +13,8 @@ fun main(args: Array<String>) {
  * (1 point) Affiche dans la console le contenu du fichier message.txt qui se trouve dans le projet de départ.
  */
 fun lire() {
-    var fichier = File("message.txt")
-    var texte: String = fichier.readText()
+    val fichier = File("message.txt")
+    val texte: String = fichier.readText()
     println(texte)
 }
 
@@ -28,20 +28,22 @@ fun lire() {
  */
 fun ecrire(args: Array<String>): Int {
 
-    if(hasTwoElements(args)){
+    if (args.size != 2) {
+        println("Merci de fournir 2 elements")
+        return -1
+    } else {
         val fichier = File(args[0])
         fichier.createNewFile()
         fichier.writeText(args[1])
+
+
+        //ou
+        //val fichier: String = args[0]
+        //val contenu: String = args[1]
+        //val fichierAEcrire: File = File(fichier)
+        //fichierAEcrire.writeText(contenu)
+
         return 1
     }
-    else{
-        println("Merci de fournir 2 elements")
-        return -1
-    }
 
-
-}
-
-fun hasTwoElements(args: Array<String>): Boolean {
-    return args.size == 2
 }
