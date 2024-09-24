@@ -6,6 +6,7 @@ import java.io.File
 fun main(args: Array<String>) {
     // Tu peux tester tes fonctions en les appellants ici.
     ecrire(args)
+    lire()
 }
 
 /**

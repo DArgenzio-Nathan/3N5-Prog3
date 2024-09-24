@@ -29,5 +29,21 @@ fun racineCarre(x: Float): Float {
           fin du pour sur les fraction
           renvoyer resultat
      */
-    return 0f
+
+    var resultat: Float = 0.0f
+    while ((resultat + 1) * (resultat + 1)<=(x)){
+        resultat++
+    }
+    var fracions: List<Double> = listOf(0.1, 0.01, 0.001, 0.0001)
+    for (fraction in fracions){
+        var base:Float = resultat
+        for (chiffre in 0..9){
+            var test:Double = (base +(fraction * chiffre))
+            if((test * test)<= x){
+                resultat = test.toFloat()
+            }
+        }
+    }
+
+    return resultat
 }
