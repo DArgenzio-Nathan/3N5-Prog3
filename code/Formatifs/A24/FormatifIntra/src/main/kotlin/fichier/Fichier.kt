@@ -3,9 +3,9 @@ package fichier
 import org.jsoup.Jsoup
 import java.io.File
 
-fun main() {
+fun main(args: Array<String>) {
     // Tu peux tester tes fonctions en les appellants ici.
-
+    ecrire(args)
 }
 
 /**
@@ -26,5 +26,21 @@ fun lire() {
  * Si tout s'est bien passé, on retourne la valeur 1.
  */
 fun ecrire(args: Array<String>): Int {
-    return 1
+
+    if(hasTwoElements(args)){
+        val fichier = File(args[0])
+        fichier.createNewFile()
+        fichier.writeText(args[1])
+        return 1
+    }
+    else{
+        println("Merci de fournir 2 elements")
+        return -1
+    }
+
+
+}
+
+fun hasTwoElements(args: Array<String>): Boolean {
+    return args.size == 2
 }
