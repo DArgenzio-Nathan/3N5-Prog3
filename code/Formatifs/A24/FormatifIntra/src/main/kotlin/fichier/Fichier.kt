@@ -1,16 +1,20 @@
 package fichier
 
+import org.jsoup.Jsoup
 import java.io.File
 
 fun main() {
     // Tu peux tester tes fonctions en les appellants ici.
+
 }
 
 /**
  * (1 point) Affiche dans la console le contenu du fichier message.txt qui se trouve dans le projet de départ.
  */
 fun lire() {
-
+    var fichier = File("message.txt")
+    var texte: String = fichier.readText()
+    println(texte)
 }
 
 /**
