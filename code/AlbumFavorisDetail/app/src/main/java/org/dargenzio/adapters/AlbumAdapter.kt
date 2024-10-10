@@ -1,10 +1,12 @@
 package org.dargenzio.adapters
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import org.dargenzio.AlbumDetailsActivity
 import org.dargenzio.databinding.AlbumItemBinding
 import org.dargenzio.models.Album
 
@@ -14,6 +16,13 @@ class AlbumAdapter : ListAdapter<Album, AlbumAdapter.AlbumViewHolder>(AlbumDiffC
         fun bind(album: Album) {
             binding.tvname.text = album.name
             binding.tvArtiste.text = album.artisteName
+
+            binding.root.setOnClickListener {
+                val intent = Intent(binding.root.context, AlbumDetailsActivity::class.java)
+                intent.putExtra("albumName", album.name)
+                intent.putExtra("artisteName", album.artisteName)
+                binding.root.context.startActivity(intent)
+            }
         }
     }
 
